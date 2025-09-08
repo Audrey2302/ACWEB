@@ -1,0 +1,294 @@
+/* =========================
+   Variables & base
+========================= */
+:root {
+  --bg: #F5F3E7;
+  --muted: #E8E3D3;
+  --olive: #708238;
+  --sage: #9CAF88;
+  --kaki: #6B705C;
+  --text: #222;
+  --card: #FFF;
+  --radius: 12px;
+  --max-width: 1000px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.45;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 28px;
+}
+
+/* =========================
+   Header
+========================= */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.logomark {
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--sage), var(--olive));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.subtitle {
+  font-size: 0.8rem;
+  color: var(--kaki);
+  margin-top: 2px;
+}
+
+nav {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--kaki);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: 1px solid transparent;
+  padding: 6px;
+  border-radius: 8px;
+}
+
+/* =========================
+   Hero
+========================= */
+.hero {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28px;
+  margin: 18px 0;
+  border-radius: 16px;
+  background: var(--muted);
+}
+
+.hero-left {
+  flex: 1;
+  min-width: 220px;
+}
+
+.hero h1 {
+  margin: 0 0 10px 0;
+  font-size: 1.75rem;
+}
+
+.hero p {
+  margin: 0 0 16px 0;
+  color: var(--kaki);
+}
+
+.cta {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 10px;
+  background: var(--olive);
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+/* =========================
+   Services
+========================= */
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.section-head small {
+  color: var(--kaki);
+}
+
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin: 10px 0 20px;
+}
+
+.service-card {
+  background: var(--card);
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.08);
+}
+
+.service-card h3 {
+  margin: 0;
+  font-size: 1.02rem;
+}
+
+.service-card p {
+  margin: 0;
+  color: var(--kaki);
+  font-size: 0.92rem;
+}
+
+/* =========================
+   Écoresponsable
+========================= */
+.eco {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  padding: 16px;
+  border-radius: 12px;
+  background: rgba(154,193,136,0.15);
+  margin: 18px 0;
+}
+
+.eco .icon {
+  width: 68px;
+  height: 68px;
+  border-radius: 10px;
+  background: var(--muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.eco p {
+  margin: 0;
+  color: var(--kaki);
+}
+
+/* =========================
+   Portfolio
+========================= */
+.portfolio {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin: 10px 0 20px;
+}
+
+.project {
+  border-radius: 10px;
+  min-height: 120px;
+  background: var(--muted);
+  display: flex;
+  align-items: flex-end;
+  padding: 12px;
+}
+
+.project h4 {
+  margin: 0;
+  color: var(--olive);
+}
+
+/* =========================
+   About & Contact
+========================= */
+.about-contact {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.about,
+.contact {
+  background: var(--card);
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.08);
+}
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact input,
+.contact textarea {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.08);
+  font-size: 0.95rem;
+}
+
+.contact button {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 0;
+  background: var(--sage);
+  font-weight: 700;
+}
+
+/* =========================
+   Footer
+========================= */
+footer {
+  padding: 18px 0 36px;
+  color: var(--kaki);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* =========================
+   Responsive
+========================= */
+@media (max-width: 800px) {
+  .about-contact {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+  }
+}
