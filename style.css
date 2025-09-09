@@ -111,64 +111,97 @@ nav a {
 /* =========================
    Hero
 ========================= */
+/* === HERO SECTION === */
 .hero {
+  position: relative; /* nécessaire pour l’overlay et les éléments internes */
   display: flex;
-  gap: 38px;
+  flex-direction: column; /* aligne titre, texte, bouton verticalement */
   align-items: center;
-  justify-content: space-around;
-  padding: 58px;
+  justify-content: center;
+  padding: 80px 20px; /* espace interne généreux */
   margin: 18px 0;
   border-radius: 16px;
 
-   /* fond image */
+  /* image de fond */
   background: url("images/hero_v2.jpg") center/cover no-repeat;
-  color: white; /* si besoin contraste */
-  position: relative;
-  
+  color: white;
+  text-align: center;
+  overflow: hidden; /* évite que l’overlay déborde */
 }
-/* overlay pour garder le texte lisible */
+
+/* overlay sombre au-dessus de l’image pour améliorer la lisibilité du texte */
 .hero::before {
   content: "";
   position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.35); /* assombrit l'image */
+  inset: 0; /* couvre tout le hero */
+  background: rgba(0, 0, 0, 0.35); /* assombrit un peu l’image */
   border-radius: 16px;
 }
 
-.hero > * {
-  position: relative; /* remet le texte au-dessus de l’overlay */
+/* animations appliquées aux éléments du hero */
+.hero h1,
+.hero p,
+.hero .cta {
+  position: relative; /* pour passer au-dessus de l’overlay */
+  opacity: 0; /* invisible au départ */
+  transform: translateY(20px); /* décalé vers le bas */
+  animation: fadeUp 0.8s ease forwards; /* animation fade + montée */
 }
 
-
-.hero-left {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-
+/* titre principal */
 .hero h1 {
-  margin: 0 0 10px 0;
-  font-size: 1.75rem;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  animation-delay: 0.2s; /* apparaît en premier */
 }
 
+/* sous-titre */
 .hero p {
-  
-  color: var(--kaki);
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  animation-delay: 0.4s; /* apparaît après le titre */
 }
 
-.cta {
+/* bouton CTA */
+.hero .cta {
   display: inline-block;
-  padding: 10px 16px;
-  border-radius: 10px;
-  background: var(--olive);
+  padding: 14px 28px;
+  border-radius: 30px; /* bouton arrondi */
+  background: #708238; /* vert olive */
   color: white;
   text-decoration: none;
   font-weight: 700;
+  font-size: 1.05rem;
+  animation-delay: 0.6s; /* apparaît en dernier */
+  transition: transform 0.2s ease, background 0.2s ease; /* effet hover fluide */
+}
+
+/* effet hover sur le bouton */
+.hero .cta:hover {
+  transform: scale(1.05); /* léger zoom */
+  background: #9CAF88; /* vert sauge */
+}
+
+/* animation fadeUp utilisée pour titre/texte/bouton */
+@keyframes fadeUp {
+  to {
+    opacity: 1; /* devient visible */
+    transform: translateY(0); /* revient à sa place normale */
+  }
 }
 
 /* =========================
    Services
 ========================= */
+.section_services {
+  background-color: #ffffff;
+  padding: 20px 20px;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+  margin-bottom: 40px;
+}
+
 .section-head {
   display: flex;
   justify-content: space-between;
@@ -188,7 +221,7 @@ nav a {
 }
 
 .service-card {
-  background: var(--card);
+  background: var(--muted);
   padding: 14px;
   border-radius: 12px;
   border: 1px solid rgba(0,0,0,0.08);
