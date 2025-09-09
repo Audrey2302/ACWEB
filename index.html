@@ -1,19 +1,23 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <script src="script.js"></script>
+  
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>AC WEB — Sites écoresponsables</title>
   <meta name="description" content="AC WEB - Audrey Curbera | Sites vitrines écoresponsables, SEO, refonte & maintenance." />
   <link rel="stylesheet" href="style.css" />
+  <script src="https://kit.fontawesome.com/97f46e4112.js" crossorigin="anonymous"></script> <!--Pour inserer les logos-->
 </head>
 <body>
-  <div class="container">
+  
+
+  
     <!-- Header -->
     <header>
       <div class="logo" aria-hidden="false">
-        <div class="logomark" aria-hidden="true">AC</div>
+        <div class="logomark" aria-hidden="true"> <i class="fa-solid fa-seedling"></i></div>
+        
         <div>
           <div>AC WEB</div>
           <div class="subtitle">Audrey Curbera</div>
@@ -37,21 +41,17 @@
       </button>
     </header>
 
+    
+<div class="container">
     <!-- Hero -->
     <section class="hero" id="accueil" role="region" aria-label="Introduction">
       <div class="hero-left">
-        <h1>Des sites modernes &amp; écoresponsables</h1>
+        <h1>Audrey Curbera</h1>
+        <h2>Des sites modernes &amp; écoresponsables</h2>
         <p>Je conçois des sites vitrines légers, rapides et optimisés pour limiter leur empreinte énergétique — sans sacrifier le design.</p>
         <a class="cta" href="#contact">Me contacter</a>
       </div>
-      <div class="hero-right" aria-hidden="true">
-        <!-- Illustration SVG -->
-        <svg width="170" height="120" viewBox="0 0 170 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration nature minimaliste">
-          <rect x="0" y="0" width="170" height="120" rx="12" fill="#FFFFFF" opacity="0.7"/>
-          <circle cx="120" cy="40" r="28" fill="#9CAF88" opacity="0.95"/>
-          <rect x="18" y="60" width="70" height="44" rx="8" fill="#E8E3D3"/>
-        </svg>
-      </div>
+
     </section>
 
     <!-- Services -->
@@ -124,16 +124,7 @@
     </footer>
   </div>
 
-<script>
-  function toggleMenu(btn){
-    const expanded = btn.getAttribute('aria-expanded') === 'true';
-    btn.setAttribute('aria-expanded', String(!expanded));
-    const nav = document.querySelector('nav');
-    if(nav.style.display === 'flex'){ nav.style.display = 'none'; }
-    else{ nav.style.display = 'flex'; nav.style.flexDirection = 'column'; nav.style.gap = '12px'; }
-  }
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
+<script src="script.js"></script>
 </body>
 </html>
 

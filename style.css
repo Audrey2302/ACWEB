@@ -1,4 +1,16 @@
 /* =========================
+   Variante marron
+========================= */
+:root.theme-brown {
+  --bg: #F5F1E9;        /* Beige doux */
+  --muted: #E9E1D7;     /* Beige clair */
+  --olive: #A47148;     /* Marron-accent (peut servir de bouton/CTA) */
+  --sage: #C9B79C;      /* Nude/grège */
+  --kaki: #5C4033;      /* Marron foncé pour textes secondaires */
+  --text: #2C2C2C;      /* Texte principal */
+  --card: #FFFFFF;      /* Fond cartes */
+}
+/* =========================
    Variables & base
 ========================= */
 :root {
@@ -10,11 +22,16 @@
   --text: #222;
   --card: #FFF;
   --radius: 12px;
-  --max-width: 1000px;
+  
 }
+/*========================= */
+
+
+
 
 * {
   box-sizing: border-box;
+  
 }
 
 body {
@@ -26,20 +43,21 @@ body {
 }
 
 .container {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 28px;
+  width: 100%;
+  margin: 0 0;
+  padding: 17px;
 }
 
 /* =========================
    Header
 ========================= */
 header {
+  background-color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding: 10px 0;
+  padding: 10px 15px;
 }
 
 .logo {
@@ -95,18 +113,37 @@ nav a {
 ========================= */
 .hero {
   display: flex;
-  gap: 28px;
+  gap: 38px;
   align-items: center;
-  justify-content: space-between;
-  padding: 28px;
+  justify-content: space-around;
+  padding: 58px;
   margin: 18px 0;
   border-radius: 16px;
-  background: var(--muted);
+
+   /* fond image */
+  background: url("images/hero_v2.jpg") center/cover no-repeat;
+  color: white; /* si besoin contraste */
+  position: relative;
+  
+}
+/* overlay pour garder le texte lisible */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35); /* assombrit l'image */
+  border-radius: 16px;
 }
 
+.hero > * {
+  position: relative; /* remet le texte au-dessus de l’overlay */
+}
+
+
 .hero-left {
-  flex: 1;
-  min-width: 220px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .hero h1 {
@@ -115,7 +152,7 @@ nav a {
 }
 
 .hero p {
-  margin: 0 0 16px 0;
+  
   color: var(--kaki);
 }
 
